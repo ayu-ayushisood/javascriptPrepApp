@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -7,20 +8,10 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
 
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
-import BottomNav from './src/components/BottomNavigation'
+import {Colors} from 'react-native/Libraries/NewAppScreen';
+import BottomNav from './src/components/BottomNavigation';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -30,12 +21,12 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView
+      style={[backgroundStyle, {backgroundColor: '#178be7', flex: 1}]}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <BottomNav />
     </SafeAreaView>
   );
 };
-
 
 export default App;

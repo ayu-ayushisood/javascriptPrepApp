@@ -1,14 +1,13 @@
-/* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-import {Text, View} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontistoIcons from 'react-native-vector-icons/Fontisto';
 
 const JavascriptComponent = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>You're in Javascript!</Text>
     </View>
   );
@@ -16,7 +15,7 @@ const JavascriptComponent = () => {
 
 const ReactjsComponent = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>You're in Reactjs!</Text>
     </View>
   );
@@ -24,7 +23,7 @@ const ReactjsComponent = () => {
 
 const Home = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Lorem Ipsum Doler Sit Amet</Text>
     </View>
   );
@@ -32,7 +31,7 @@ const Home = () => {
 
 const ReduxComponent = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>You're in Redux!</Text>
     </View>
   );
@@ -40,7 +39,7 @@ const ReduxComponent = () => {
 
 const ReactNativeComponent = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>You're in React native!</Text>
     </View>
   );
@@ -54,7 +53,7 @@ const BottomNavigation = () => {
       <Tab.Navigator
         initialRouteName="Javascript"
         screenOptions={{
-          tabBarActiveTintColor: '#e91e63',
+          tabBarActiveTintColor: '#ec008c',
         }}>
         <Tab.Screen
           name="Javascript"
@@ -76,7 +75,11 @@ const BottomNavigation = () => {
           options={{
             tabBarLabel: 'React',
             tabBarIcon: () => (
-              <MaterialCommunityIcons name="react" color={'pink'} size={20} />
+              <MaterialCommunityIcons 
+                name="react" 
+                color={'#FD0292'} 
+                size={20} 
+              />
             ),
           }}
         />
@@ -86,7 +89,11 @@ const BottomNavigation = () => {
           options={{
             tabBarLabel: 'Home',
             tabBarIcon: () => (
-              <MaterialCommunityIcons name="home" color={'pink'} size={20} />
+              <MaterialCommunityIcons 
+                name="home" 
+                color={'#FD0292'} 
+                size={20} 
+              />
             ),
           }}
         />
@@ -96,7 +103,11 @@ const BottomNavigation = () => {
           options={{
             tabBarLabel: 'Redux',
             tabBarIcon: () => (
-              <FontistoIcons name="redux" color={'pink'} size={20} />
+              <FontistoIcons 
+                name="redux" 
+                color={'#FD0292'} 
+                size={20} 
+              />
             ),
           }}
         />
@@ -106,7 +117,11 @@ const BottomNavigation = () => {
           options={{
             tabBarLabel: 'React Native',
             tabBarIcon: () => (
-              <MaterialCommunityIcons name="react" color={'pink'} size={20} />
+              <MaterialCommunityIcons 
+                name="react" 
+                color={'#FD0292'} 
+                size={20} 
+              />
             ),
           }}
         />

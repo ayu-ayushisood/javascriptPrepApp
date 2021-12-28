@@ -13,6 +13,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		85744E24689017C8CB972D4B /* libPods-jsPrepApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61BDD52C57027F73847FCEED /* libPods-jsPrepApp.a */; };
+		A01ACDD4277A219800D6CB24 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = A01ACDD3277A219800D6CB24 /* Fonts */; };
 		F364370A3BF295692F031C8D /* libPods-jsPrepApp-jsPrepAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE058BAA60E9083B1937C0E5 /* libPods-jsPrepApp-jsPrepAppTests.a */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		61BDD52C57027F73847FCEED /* libPods-jsPrepApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-jsPrepApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		673B308874CBA6DAEBCFEE76 /* Pods-jsPrepApp-jsPrepAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jsPrepApp-jsPrepAppTests.release.xcconfig"; path = "Target Support Files/Pods-jsPrepApp-jsPrepAppTests/Pods-jsPrepApp-jsPrepAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = jsPrepApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A01ACDD3277A219800D6CB24 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
 		A2A310B7E8222EF9F0F2F15E /* Pods-jsPrepApp-jsPrepAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jsPrepApp-jsPrepAppTests.debug.xcconfig"; path = "Target Support Files/Pods-jsPrepApp-jsPrepAppTests/Pods-jsPrepApp-jsPrepAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE058BAA60E9083B1937C0E5 /* libPods-jsPrepApp-jsPrepAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-jsPrepApp-jsPrepAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62DDF88C429F1CEB0F184D0 /* Pods-jsPrepApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jsPrepApp.debug.xcconfig"; path = "Target Support Files/Pods-jsPrepApp/Pods-jsPrepApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,7 +116,6 @@
 				A2A310B7E8222EF9F0F2F15E /* Pods-jsPrepApp-jsPrepAppTests.debug.xcconfig */,
 				673B308874CBA6DAEBCFEE76 /* Pods-jsPrepApp-jsPrepAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,6 +129,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				A01ACDD3277A219800D6CB24 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* jsPrepApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* jsPrepAppTests */,
@@ -243,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A01ACDD4277A219800D6CB24 /* Fonts in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
@@ -561,7 +564,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -627,7 +630,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

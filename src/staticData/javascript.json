@@ -1,0 +1,168 @@
+{
+    "topic": "JavaScript",
+    "importantLinks": [{
+        "link": "https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4", 
+        "text": "Event Loop"
+    },{
+        "link": "https://www.telerik.com/blogs/debouncing-and-throttling-in-javascript#:~:text=Throttling%20is%20a%20technique%20in,Hello%2C%20world%20on%20the%20console.",
+        "text": "Difference between Deboucing and Throttling"
+    }, {
+        "link": "https://www.javatpoint.com/how-ajax-works",
+        "text": "How does Ajax work with Javascript"
+    },{
+        "link": "https://javascript.info/property-accessors",
+        "text": "Getters and Setters"
+    },{
+        "link": "https://zerotomastery.io/courses/advanced-javascript/cheatsheet/",
+        "text": "Important JS concepts"
+    },{
+        "link": "https://css-tricks.com/understanding-event-emitters/",
+        "text": "Implementing Event Emitters in JavaScript"
+    },{
+        "link": "https://vanillajstoolkit.com/polyfills/arrayfind/",
+        "text": "Create a polyfill for Array.prototype.find()"
+    }],
+    "logo": "https://javascript-prep.s3.ap-south-1.amazonaws.com/JavaScript-logo.png",
+    "questionsAndAnswers":[{
+        "question": "<h3>Hoisting</h3>",
+        "answer": "Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution regardless of whether their scope is global or local. Every time you write a program in javascript, it runs in an environment and that environment is called execution context. There are two types of execution contexts: <ul><li>Global Execution Context</li><li>Execution Context created every time after a function is created. Every time a function is called the new execution context is pushed to the top of the global execution context, which makes an execution stack.</li></ul>An undeclared variable is assigned the value undefined at execution and is also type undefined. A ReferenceError is thrown when trying to access a previously undeclared variable.<br>Function declarations are hoisted and Function expressions are not .. gives typeError"
+    }, {
+        "question": "<h3>JavaScript Functions</h3>",
+        "answer": "<p>2 types of JS functions</p><ol><li>Function declaration and 2. Function Expression</li><li>The Function Declaration is created when JavaScript is preparing to start the script and is visible everywhere in it.<code>function foo(){}</code></li><li>Function Expressions are created when the execution reaches them.<code>let foo = function(){}</code>Difference</li><li>Syntax</li><li>The main difference between a function expression and a function declaration is the function name, which can be omitted in function expressions to create anonymous functions.</li><li>FE can be used as an IIFE.*can&#39;t use function expression before creating them (because they are not hoisted).</li></ol>"
+    }, {
+        "question": "<h3>Closures</h3>",
+        "answer": "<p>A closure is an inner function which gives you access to an outer function’s scope from inside even before the function is returned. In JavaScript, closures are created every time a function is created, at function creation time. A closure is the combination of a function and the lexical environment within which that function was declared. This environment consists of any local variables that were in-scope at the time the closure was created.</p> <p>what happens internally is: outer function execution goes into the execution stack first, then the variables goes into symbols table. Variable remains there till the execution of the function is completed. Then comes the inner function, it goes in execution stack and can access variable from symbols table. Once the execution of outer function is completed you can&#39;t access the variable outside. Also, you can&#39;t access the variables declared inside the inner function. <code>function runExecution() { var a = 10; function add(b){ var b = 20;return a + b;} add();}</code></p><p>Further explanation to that &quot;reference&quot; concept: Point 1: &quot;An object is marked as eligible to be garbage collected when it can no longer be accessed.&quot; As you can&#39;t initiate garbage collection process manually in javascript, JS engine determines the eligibility of an object for GC using the above mentioned point. FYI, this is applicable for all types of objects.</p><p>But if there&#39;s a reference somewhere, which means if it can still be accessed (In case of closure, inner function still has reference preserved for variables defined in outer function), which means it still stays in the Heap memory &amp; garbage collector doesn&#39;t consider these variables.</p> "
+    },{
+        "question": "<h3>Spread and Rest operator</h3>",
+        "answer": "<p>The spread operator takes an array (or any iterable) and spreads its values. The spread operator takes the array of parameters and spreads them across the arguments in the function call. But what if we need our function to be able to work with an unknown number of parameters? That’s where the rest parameter comes in. The rest parameter gives us an easier and cleaner way of working with an indefinite number of parameters</p> <p><strong>Arguments</strong> is like rest operator, it was used in old javascript but the difference between these both is, arguments creates an array like structure but not array, so we can&#39;t use methods of array, for example array.map(..)</p></p> <ul> <li>Spread syntax internally uses iterator, as for...of</li> <li>Rest parameters are used to create functions that accept any number of arguments.</li> <li>The spread syntax is used to pass an array to functions that normally require a list of many arguments.  </li> </ul> <p>Uses of spread operator-&gt; </p> <ul> <li>Make copies of array or object. </li> <li>Merge arrays</li></ul>"
+    },{
+        "question": "Differences between var and let",
+        "answer": "<ol> <li>Scope: var variables are function scoped and let variables are block scoped.</li> <li>Hoisting: var variables are hoisted, let will throw referenceError.</li> <li>Global object: var variables are created as a global object i,e, are attached to window object, but let variables are not. (which means var are wasting memory attaching every variable to the global object.)</li> <li>Redeclaration:  <code>var foo = 20; var foo;</code> its ok but will throw an error in strict mode but <code>let bar = 20; let 20;</code> is not ok. </li> </ol>"
+    },{
+        "question": "Differences between normal function and arrow function",
+        "answer": "<ol><li>syntax</li> <li>no arguments binding in arrow functions</li> <li>use of this keyword -&gt; arrow functions do not have their own this.</li> <li>using new keyword: regular functions are callable and constructible. but arrow functions are only callable and not constructible.</li> <li>no duplicate name parameters</li> </ol>"
+    },{
+        "question": "HOF: Higher order functions",
+        "answer": "<p>A higher-order function is a function that can take another function as an argument, or that returns a function as a result. When you pass a function by name without parentheses, you are passing the function object itself. When you pass it with parentheses, you are passing the result of executing that function.</p>"
+    },{
+        "question": "Difference between null and undefined",
+        "answer": "<ul><li>null is an object whereas undefined is of type undefined.</li><li>null !== undefined but null == undefined</li><li>undefined means a variable is declared but not assigned a value whereas null is an assigned value.</li></ul>"
+    },{
+        "question": "Deep copy and Shallow copy",
+        "answer": "<p>If we make a copy by assigning a variable to another variable <code>b = a</code> , and change some nested value in <code>b</code>, it actually changes <code>a</code>’s nested value as well, since <code>a</code> and <code>b</code> actually point to the same thing. <br /> Shallow copy in objects can be done by <strong>spread operators</strong>, <strong>Object.assign({}, obj)</strong> and <strong>obj.slice()</strong>; Shallow copy in arrays: <strong>spread</strong>, <strong>Array.from(arr)</strong></p> <p>When an object variable is copied – the reference is copied, the object is not duplicated. So what if we have a nested object, in that case nested properties are also copied by reference and change in nested properties will be reflected in the original array (this is called shallow copy). To solve this issue we&#39;ll use deep cloning. Deep copy: <code>JSON.parse(JSON.stringify(obj))</code></p> This is not a suggested method as it takes time to parse json and it's not optimised if we have a deep deep deep object. In that case we should know how to design our own deep cloning algorithm."
+    },{
+        "question": "Typecasting or coercion",
+        "answer": "<p>it means changing data type of a value to to another data type. 2 types</p> <ul> <li>implicit-&gt; automatic conversion of data type</li> <li>explicit-&gt; type conversion example.. parseInt(), parseFloat(),  String(), Boolean()</li> </ul>"
+    },{
+        "question": "Features of ES6",
+        "answer": "<ol><li>Constants</li><li>Block scoped variables and block scoped functions</li><li>arrow functions</li><li>Destructring</li><li>Template Literals</li><li>Extended parameter handling using Rest and Spread</li></ol>"
+    },{
+        "question": "Promises",
+        "answer": "<p>Promises lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future. A Promise can be in one of the 3 states</p> <ul> <li>Pending</li> <li>Fulfilled</li> <li>Rejected</li> </ul>"
+    },{
+        "question": "Event loop",
+        "answer": "Refer to Important Links for an amazing article about event loop"
+    },{
+        "question": "Bind, call and apply",
+        "answer": "<ul> <li>The bind() method creates a new function that, when called, has its <em>this</em> keyword set to the provided value. </li> <li>Call() expects all parameters to be passed in individually, whereas apply() expects an array of all of our parameters. Difference between call and bind is:</li> <li>Executes the function it was called upon right away.</li> <li>The call() method does not make a copy of the function it is being called on.</li> </ul>"
+    },{
+        "question": "Debouncing",
+        "answer": "Debouncing is a programming practice used to ensure that time-consuming tasks do not fire so often, that it stalls the performance of the web page. In other words, it limits the rate at which a function gets invoked."
+    },{
+        "question": "Throttling",
+        "answer": "Throttling is a technique in which, no matter how many times the user fires the event, the attached function will be executed only once in a given time interval."
+    },{
+        "question": "Difference between throttling and debouncing",
+        "answer": "Throttling will delay executing a function. It will reduce the notifications of an event that fires multiple times. Debouncing will bunch a series of sequential calls to a function into a single call to that function. It ensures that one notification is made for an event that fires multiple times. Refer to Important Links for an amazing article about Differences between throttling and debouncing"
+    },{
+        "question": "This keyword",
+        "answer": "<p>The value of this is determined by how a function is called (runtime binding). A property of an execution context (global, function or eval) that, in non–strict mode, is always a reference to an object and in strict mode can be any value.</p><ul><li>Global Context- In global execution context, <em>this</em> always refer to the window object or global object whether in strict mode or not.</li><li>Function Context- Inside a function, the value of this depends on how the function is called. To set the value of this to a particular value when calling a function, use call(), or apply()</li> </ul>. Also, this is an object which the function is a property of. So, how can we use <code>this</code> differently. <br /> 1st: <code>new binding this</code> Where we actually instantiate a class or a function. Which allows us to assign this to the object that we instantiated.<br /> 2nd: <code>Implicit bindind</code> When we just create an object and inside that object this refers to the object in which it is in. <br /> 3rd: <code>Explicit binding</code> Which can be done by binding it to an external value. By using bind, call or apply. <br /> 4th: <code>Arrow functions</code> by using arrow functions we can do lexical scoping that means, where ever we write the function, that's what this binds to."
+    },{
+        "question": "Object.preventExtensions()",
+        "answer": "It is a method that simply converts an object passed as the argument into a non-extensible state. This method doesn't allow us to add new properties but the value of properties can be changed and also allow us to delete the existing properties."
+    },{
+        "question": "Currying",
+        "answer": "<p>Currying is the pattern of functions that immediately evaluate and return other functions. This is made possible by the fact that Javascript functions are expressions that can return other functions.</p> <p>Curried functions are constructed by chaining closures by defining and immediately returning their inner functions simultaneously.<code>function curry(f) { // curry(f) does the currying transform return function(a) { return function(b) { return f(a, b); }; }; }</code></p>"
+    },{
+        "question": "Nullish coalescing operator '??'",
+        "answer": "<p>The nullish coalescing operator ?? provides a short syntax for selecting a first “defined” variable from the list. <code>height = height ?? 100;</code> sets height to 100 if it is undefined</p>"
+    },{
+        "question": "Map & Set",
+        "answer": "<ul> <li>Map is a collection of keyed data items, just like an Object. But the main difference is that Map allows keys of any type. </li> <li>Methods: <code>map.get()</code> , <code>map.set()</code> </li> <li>A Set is a special type collection – “set of values” (without keys), where each value may occur only once.</li> </ul> "
+    },{
+        "question": "Object iteration",
+        "answer": "Object.keys(), Object.values(), Object.entries() "
+    },{
+        "question": "Who listens to promises? how does it know which state is the promise in?",
+        "answer": ""
+    },{
+        "question": "What is AJAX and how does it work?",
+        "answer": "AJAX (Asynchronous JavaScript and XML) allows applications to transport data to/from a server asynchronously without refreshing the page. This means that it is likely to update parts of a web page, without reloading the entire page. "
+    },{
+        "question": "How does JS handle ajax requests?",
+        "answer": "User sends a request from the UI and a javascript call goes to XMLHttpRequest object. HTTP Request is sent to the server by XMLHttpRequest object. Server interacts with the database using JSP, PHP, Servlet, ASP.net etc. Data is retrieved. Server sends XML data or JSON data to the XMLHttpRequest callback function. HTML and CSS data is displayed on the browser."
+    },{
+        "question": "Difference between process and thread in browser",
+        "answer": "chrome uses multiprocessing and firefox uses multi threading. so each tab in chrome is a <strong>process</strong>, whereas in firefox each tab is a <strong>thread</strong>. since multithreading is faster, firefox is faster(due to shared memory, context switching is faster in threads). However, it is important to note that, chrome is less likely to crash since if one tab(process) crashes, it won't crash the entire browser. opposite is true in case of firefox."
+    },{
+        "question": "What happens internally in the browser when we load html css and js",
+        "answer": "A DOM is created using the HTML files. Starting from the<code> < body > </code>tag. The javascript files and the css files are also loaded as extras in the DOM. These javascript file contents eventually contain some functions, which are then called as per the user's code logic. The Css classes get applied to the DOM elements while rendering the DOM"
+    },{
+        "question": "array of users data and that data is paginated, only 10 are shown at a time, now second batch is loading and user clicks somewhere else and that takes time to give response. What will load first? (2nd batch of users or response )",
+        "answer": ""
+    },{
+        "question": "What is Destructuring?",
+        "answer": "The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables."
+    },{
+        "question": "What is Prototypal Inheritance?",
+        "answer": "In JavaScript, objects have a special hidden property [[Prototype]] (as named in the specification), that is either null or references another object. That object is called <em>a prototype</em>. When we want to read a property from object, and it’s missing, JavaScript automatically takes it from the prototype. This is called “prototypal inheritance”. Further understanding of prototypal inheritance: Only constructor functions have <code>prototype</code> property. If we check to see prototype property on a regular function, it will be undefined"
+    },{
+        "question": "What are getters and setters",
+        "answer": "Refer to important links"
+    },{
+        "question": "What are Web Workers",
+        "answer": "A web worker is a JavaScript that runs in the background, independently of other scripts, without affecting the performance of the page. You can continue to do whatever you want: clicking, selecting things, etc., while the web worker runs in the background. <br /> A worker is an object created using a constructor (e.g. Worker()) that runs a named JavaScript file — this file contains the code that will run in the worker thread; workers run in another global context that is different from the current window. Thus, using the window shortcut to get the current global scope (instead of self) within a Worker will return an error."
+    },{
+        "question": "Object.create()",
+        "answer": "Object.create() creates a new empty object for us and is used to achieve prototypal inhertitance (We don't use it though as it's not object oriented paradigm). Suppose we have an object with certain methods or properties which we want to re use in several other functions. We can provide that object's name into the argument of object.create(). <br /> Example: <code> let usable = {talk(){return 'Bla Bla'}}</code><br /> <code>let useUsable = Object.create(usable)</code> <br /> Now, it creates a new empty object useUsable which has the talk() method."
+    },{
+        "question": "Difference between window object and this",
+        "answer": "Window object always refers to the global object or global variables. But value of <code>this</code> can vary according to how it is called. We should always remember this: <code>this</code> is an object which the function is a property of. That means where this is called."
+    },{
+        "question": "Difference between local storage, session storage and cookie storage",
+        "answer": "Local storage survives browser close and even computer shut down, whereas session storage saves data only until the tab is closed. "
+    },{
+        "question": "Give different methods to load javascript asynchronously in html5",
+        "answer": "We have 2 methods to load javascript files asynchronously in html. <ul><li><strong>async</strong> if we are calling a js file by using async keyword in the script tag, then the execution of HTML file and loading of js file goes in parallel. After the loading of file, our js file executes then and there, then if we have any other html elements then they are exectured or run.</li><li><strong>defer</strong> keyword when used, it executes the html file and loads js file paralelly, then any of the remaining html file is executed. After complete execution of html file, the js script is executed. </li></ul>"
+    },{
+        "question": "Does JS has classes?",
+        "answer": "Well, yes they are just syntactic sugar but <code>class</code> keyword is still just prototypal inheritance. It can also be said as <code>Pseudo classical inheritance</code> because it's not real classical inheritance. Methods to be shared are written outside the constructor function because everytime we instantiate a class, a constructor function is run and it may have different values while instantiating. But every instantiated object needs that method which is why it is put outside to make it shareable."
+    },{
+        "question": "Difference between async await and promises",
+        "answer": "<ol><li>Only the promise chain itself is asynchronous in Promises but the whole wrapper function in case of async await is asynchronous.</li> <li>To resolve multiple promises using promise chain, we use Promise.all() But with async await we can simply await both promises, store the results in variables, and use them later in the code block.</li></ol>"
+    },{
+        "question": "Difference between foreach, filter and map",
+        "answer": ""
+    },{
+        "question": "Benefits of template literals",
+        "answer": ""
+    },{
+        "question": "Page can load without css?",
+        "answer": ""
+    },{
+        "question": "Naming convention for css classes",
+        "answer": ""
+    },{
+        "question": "Callback hell",
+        "answer": "Asynchronous JavaScript, or JavaScript that uses callbacks, is hard to get right intuitively. A lot of code ends up looking like, if this happens then this and then this and then this causing the pyramid of coode."
+    },{
+        "question": "Event bubbling, capturing",
+        "answer": "These are 2 ways of event propogation in the DOM tree. If any event occurs in child, it propogates to its parent as well. It means, it moves up to the heirarchy. We can stop this proppgation by using stopPropogation()"
+    },{
+        "question": "What are Event Emitters and how to create your own event emitters in JavaScript?",
+        "answer": "An event emitter is a pattern that listens to a named event, fires a callback, then emits that event with a value. For its implementation, refer to the useful links"
+    },{
+        "question": "Make a polyfill of an array method",
+        "answer": "A polyfill is a piece of code (usually JavaScript on the Web) used to provide modern functionality on older browsers that do not natively support it. In this process, at first the method is attached to the array prototype and then the function is returned. For more details, refer to the useful links for creating a polyfill of Array.prototype.find()"
+    }]
+}

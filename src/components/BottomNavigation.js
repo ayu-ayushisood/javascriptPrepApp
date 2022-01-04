@@ -4,18 +4,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontistoIcons from 'react-native-vector-icons/Fontisto';
+import QuestionAnswerComponent from './QuestionAnswerComponent';
+import styles from '../stylesheet/style';
 
-const JavascriptComponent = () => {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>You're in Javascript!</Text>
-    </View>
-  );
-};
+let json = require(`../staticData/javascript.json`);
 
 const ReactjsComponent = () => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={styles.centerAligned}>
       <Text>You're in Reactjs!</Text>
     </View>
   );
@@ -23,7 +19,7 @@ const ReactjsComponent = () => {
 
 const Home = () => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={styles.centerAligned}>
       <Text>Lorem Ipsum Doler Sit Amet</Text>
     </View>
   );
@@ -31,7 +27,7 @@ const Home = () => {
 
 const ReduxComponent = () => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={styles.centerAligned}>
       <Text>You're in Redux!</Text>
     </View>
   );
@@ -39,7 +35,7 @@ const ReduxComponent = () => {
 
 const ReactNativeComponent = () => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={styles.centerAligned}>
       <Text>You're in React native!</Text>
     </View>
   );
@@ -57,7 +53,7 @@ const BottomNavigation = () => {
         }}>
         <Tab.Screen
           name="Javascript"
-          component={JavascriptComponent}
+          // component={QuestionAnswerComponent}
           options={{
             tabBarLabel: 'JS',
             tabBarIcon: () => (
@@ -68,7 +64,9 @@ const BottomNavigation = () => {
               />
             ),
           }}
-        />
+        >
+          {(props) => <QuestionAnswerComponent questionsAndAnswers={json.questionsAndAnswers}/>}
+        </Tab.Screen>
         <Tab.Screen
           name="Reactjs"
           component={ReactjsComponent}
